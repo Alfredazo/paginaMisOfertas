@@ -16,8 +16,7 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent&gt;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;sequence&gt;
- *         &lt;element name="usuario" type="{http://www.w3.org/2001/XMLSchema}long"/&gt;
- *         &lt;element name="parameter1" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *         &lt;element name="nombreUsuario" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
  *       &lt;/sequence&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
@@ -28,52 +27,34 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "eliminarUsuario", propOrder = {
-    "usuario",
-    "parameter1"
+    "nombreUsuario"
 })
 public class EliminarUsuario {
 
-    protected long usuario;
-    protected String parameter1;
+    protected String nombreUsuario;
 
     /**
-     * Obtiene el valor de la propiedad usuario.
-     * 
-     */
-    public long getUsuario() {
-        return usuario;
-    }
-
-    /**
-     * Define el valor de la propiedad usuario.
-     * 
-     */
-    public void setUsuario(long value) {
-        this.usuario = value;
-    }
-
-    /**
-     * Obtiene el valor de la propiedad parameter1.
+     * Obtiene el valor de la propiedad nombreUsuario.
      * 
      * @return
      *     possible object is
      *     {@link String }
      *     
      */
-    public String getParameter1() {
-        return parameter1;
+    public String getNombreUsuario() {
+        return nombreUsuario;
     }
 
     /**
-     * Define el valor de la propiedad parameter1.
+     * Define el valor de la propiedad nombreUsuario.
      * 
      * @param value
      *     allowed object is
      *     {@link String }
      *     
      */
-    public void setParameter1(String value) {
-        this.parameter1 = value;
+    public void setNombreUsuario(String value) {
+        this.nombreUsuario = value;
     }
 
 }

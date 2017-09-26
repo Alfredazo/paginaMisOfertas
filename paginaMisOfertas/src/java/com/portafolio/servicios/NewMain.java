@@ -5,6 +5,13 @@
  */
 package com.portafolio.servicios;
 
+import javax.xml.namespace.QName;
+import javax.xml.transform.Source;
+import javax.xml.ws.Dispatch;
+import javax.xml.transform.stream.StreamSource;
+import javax.xml.ws.Service;
+import java.io.StringReader;
+
 /**
  *
  * @author Alfredazo
@@ -16,21 +23,14 @@ public class NewMain {
      */
     public static void main(String[] args) {
        
-        System.out.println("El resultado es:"+ingresarUsuario("papa", "123"));
-        System.out.println(hello("prueba01"));
+//        System.out.println(listarInformacionCompletaTodosLosUsuarios());
         
     }
 
-    private static boolean ingresarUsuario(java.lang.String nombreUsuario, java.lang.String claveUsuario) {
-        com.portafolio.servicios.WSGestionarUsuario_Service service = new com.portafolio.servicios.WSGestionarUsuario_Service();
-        com.portafolio.servicios.WSGestionarUsuario port = service.getWSGestionarUsuarioPort();
-        return port.ingresarUsuario(nombreUsuario, claveUsuario);
+
+
+    
     }
 
-    private static String hello(java.lang.String name) {
-        com.portafolio.servicios.WSGestionarUsuario_Service service = new com.portafolio.servicios.WSGestionarUsuario_Service();
-        com.portafolio.servicios.WSGestionarUsuario port = service.getWSGestionarUsuarioPort();
-        return port.hello(name);
-    }
-    
-}
+ 
+

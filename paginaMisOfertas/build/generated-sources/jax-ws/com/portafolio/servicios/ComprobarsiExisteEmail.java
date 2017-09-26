@@ -7,16 +7,16 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Clase Java para hello complex type.
+ * <p>Clase Java para comprobarsiExisteEmail complex type.
  * 
  * <p>El siguiente fragmento de esquema especifica el contenido que se espera que haya en esta clase.
  * 
  * <pre>
- * &lt;complexType name="hello"&gt;
+ * &lt;complexType name="comprobarsiExisteEmail"&gt;
  *   &lt;complexContent&gt;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;sequence&gt;
- *         &lt;element name="name" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *         &lt;element name="emailUsuario" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
  *       &lt;/sequence&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
@@ -26,35 +26,35 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "hello", propOrder = {
-    "name"
+@XmlType(name = "comprobarsiExisteEmail", propOrder = {
+    "emailUsuario"
 })
-public class Hello {
+public class ComprobarsiExisteEmail {
 
-    protected String name;
+    protected String emailUsuario;
 
     /**
-     * Obtiene el valor de la propiedad name.
+     * Obtiene el valor de la propiedad emailUsuario.
      * 
      * @return
      *     possible object is
      *     {@link String }
      *     
      */
-    public String getName() {
-        return name;
+    public String getEmailUsuario() {
+        return emailUsuario;
     }
 
     /**
-     * Define el valor de la propiedad name.
+     * Define el valor de la propiedad emailUsuario.
      * 
      * @param value
      *     allowed object is
      *     {@link String }
      *     
      */
-    public void setName(String value) {
-        this.name = value;
+    public void setEmailUsuario(String value) {
+        this.emailUsuario = value;
     }
 
 }

@@ -18,6 +18,10 @@ import javax.xml.bind.annotation.XmlType;
  *       &lt;sequence&gt;
  *         &lt;element name="nombreUsuario" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
  *         &lt;element name="claveUsuario" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *         &lt;element name="emailUsuario" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *         &lt;element name="puntosAcumulados" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
+ *         &lt;element name="nivelUsuario" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
+ *         &lt;element name="urlImagenUsuario" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
  *       &lt;/sequence&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
@@ -29,12 +33,20 @@ import javax.xml.bind.annotation.XmlType;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "ingresarUsuario", propOrder = {
     "nombreUsuario",
-    "claveUsuario"
+    "claveUsuario",
+    "emailUsuario",
+    "puntosAcumulados",
+    "nivelUsuario",
+    "urlImagenUsuario"
 })
 public class IngresarUsuario {
 
     protected String nombreUsuario;
     protected String claveUsuario;
+    protected String emailUsuario;
+    protected int puntosAcumulados;
+    protected int nivelUsuario;
+    protected String urlImagenUsuario;
 
     /**
      * Obtiene el valor de la propiedad nombreUsuario.
@@ -82,6 +94,86 @@ public class IngresarUsuario {
      */
     public void setClaveUsuario(String value) {
         this.claveUsuario = value;
+    }
+
+    /**
+     * Obtiene el valor de la propiedad emailUsuario.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getEmailUsuario() {
+        return emailUsuario;
+    }
+
+    /**
+     * Define el valor de la propiedad emailUsuario.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setEmailUsuario(String value) {
+        this.emailUsuario = value;
+    }
+
+    /**
+     * Obtiene el valor de la propiedad puntosAcumulados.
+     * 
+     */
+    public int getPuntosAcumulados() {
+        return puntosAcumulados;
+    }
+
+    /**
+     * Define el valor de la propiedad puntosAcumulados.
+     * 
+     */
+    public void setPuntosAcumulados(int value) {
+        this.puntosAcumulados = value;
+    }
+
+    /**
+     * Obtiene el valor de la propiedad nivelUsuario.
+     * 
+     */
+    public int getNivelUsuario() {
+        return nivelUsuario;
+    }
+
+    /**
+     * Define el valor de la propiedad nivelUsuario.
+     * 
+     */
+    public void setNivelUsuario(int value) {
+        this.nivelUsuario = value;
+    }
+
+    /**
+     * Obtiene el valor de la propiedad urlImagenUsuario.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getUrlImagenUsuario() {
+        return urlImagenUsuario;
+    }
+
+    /**
+     * Define el valor de la propiedad urlImagenUsuario.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setUrlImagenUsuario(String value) {
+        this.urlImagenUsuario = value;
     }
 
 }
