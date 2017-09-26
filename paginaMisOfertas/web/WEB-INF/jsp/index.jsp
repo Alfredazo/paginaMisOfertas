@@ -1,3 +1,4 @@
+<%@taglib  prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
     "http://www.w3.org/TR/html4/loose.dtd">
@@ -15,7 +16,21 @@
                 the redirection in</i> <tt>redirect.jsp</tt> <i>to point to the new
                 welcome page and also update the welcome-file setting in</i>
             <tt>web.xml</tt>.</p>
-        
+
         <a href="login.htm">Iniciar Sesión</a>
-    </body>
+    
+
+    <form:form method="post" action="login.htm" commandName="login2">
+        <h1>Iniciar Sesión</h1>          
+        Nombre Usuario o Email:<input class ="iptRegister" type="text" id="txtNombreUsuario" name="txtNombreUsuario" value="" />
+        <br>
+        Nombre Contraseña:<input class ="iptRegister" type="password" id="txtClave" name="txtClave" value="" />
+        <br>            
+        <input type="submit" id="btnRegister" name="btnRegister" value="Register" onclick="" style="cursor:pointer"/>
+    </form:form>
+
+
+</body>
+
+
 </html>

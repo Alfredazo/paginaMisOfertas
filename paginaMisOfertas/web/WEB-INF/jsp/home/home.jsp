@@ -1,9 +1,4 @@
-<%-- 
-    Document   : home
-    Created on : 26-sep-2017, 15:35:31
-    Author     : Alfredazo
---%>
-
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"   %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -13,5 +8,10 @@
     </head>
     <body>
         <h1>Hello desde Home!</h1>
+        Session <c:out value="${session}"/>
+        <br>
+        Session <c:out value="${nombre}"/>
+         <br>
+        Session <c:out value="${clave}"/>
     </body>
 </html>

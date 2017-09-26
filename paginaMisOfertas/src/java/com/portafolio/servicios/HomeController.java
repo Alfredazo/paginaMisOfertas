@@ -14,11 +14,6 @@ public class HomeController {
         return mav;
     }
 
-    @RequestMapping("login.htm")
-    public ModelAndView login() {
-        ModelAndView mav = new ModelAndView();
-        mav.setViewName("home/login");
-        return mav;
-    }
+   
 
 }
