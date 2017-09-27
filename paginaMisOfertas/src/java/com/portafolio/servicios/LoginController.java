@@ -6,6 +6,7 @@
 package com.portafolio.servicios;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -28,7 +29,7 @@ public class LoginController {
     }
 
     @RequestMapping(method = RequestMethod.POST)
-    public ModelAndView createCustomer(HttpServletRequest request, SessionStatus status) {
+    public ModelAndView createCustomer(HttpServletRequest request, HttpSession sesion) {
         
         String email = request.getParameter("txtNombreUsuario");
         String clave = request.getParameter("txtClave");
@@ -37,9 +38,8 @@ public class LoginController {
             /*Redireccionar a la ventana*/
             ModelAndView mav = new ModelAndView("");
             mav.setViewName("home/home");
-            mav.addObject("session", status);
-            mav.addObject("nombre", email);
-            mav.addObject("clave",  clave);
+        
+            sesion.setAttribute("nombre", email);
             
             return mav;
         }else{
