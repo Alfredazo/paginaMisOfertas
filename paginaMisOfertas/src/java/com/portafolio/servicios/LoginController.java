@@ -47,36 +47,27 @@ public class LoginController {
                     
                     return new ModelAndView("redirect:/consumidor.htm");                   
                 case 1:
-                    /*Encargado de Tienda*/
-                    ModelAndView mavEncargado = new ModelAndView("");
-                    mavEncargado.setViewName("encargado/encargado");
-                    
+                    /*Encargado de Tienda*/                  
                     sesion.setAttribute("nombre", email);
                     sesion.setAttribute("nivelUsuarioSesion", nivelUsuario);
                     
-                    return mavEncargado;
+                    return new ModelAndView("redirect:/encargado.htm");
                 case 2:
                     /*Gerente*/
-                    ModelAndView mavGerente = new ModelAndView("");
-                    mavGerente.setViewName("gerente/gerente");
-                    
                     sesion.setAttribute("nombre", email);
                     sesion.setAttribute("nivelUsuarioSesion", nivelUsuario);
                     
-                    return  mavGerente;
+                    return new ModelAndView("redirect:/gerente.htm");
 
                 case 3:
-                    /*Administrador*/
-                    ModelAndView mav = new ModelAndView("");
-                    mav.setViewName("administrador/administrador");
+                    /*Administrador*/                   
                     ArrayList<PersonaUsuario> listado = new ArrayList<PersonaUsuario>();
                     listado = (ArrayList<PersonaUsuario>) listarInformacionCompletaTodosLosUsuarios();
                     sesion.setAttribute("listadoPersonas", listado);
                     sesion.setAttribute("nombre", email);
                     sesion.setAttribute("nivelUsuarioSesion", nivelUsuario);
                     
-                    System.out.println("admi");
-                    return mav;
+                    return new ModelAndView("redirect:/administrador.htm");
                 
                 default:
                     ModelAndView mavHome = new ModelAndView("");
