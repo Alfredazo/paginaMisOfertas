@@ -5,6 +5,7 @@
  */
 package com.portafolio.servicios;
 
+import java.util.ArrayList;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import org.springframework.stereotype.Controller;
@@ -38,7 +39,12 @@ public class LoginController {
             /*Redireccionar a la ventana*/
             ModelAndView mav = new ModelAndView("");
             mav.setViewName("home/home");
-        
+            
+            ArrayList<PersonaUsuario> listado = new ArrayList<PersonaUsuario>();
+            listado = (ArrayList<PersonaUsuario>) listarInformacionCompletaTodosLosUsuarios();
+            
+            
+            sesion.setAttribute("listadoPersonas", listado);
             sesion.setAttribute("nombre", email);
             
             return mav;
@@ -57,4 +63,13 @@ public class LoginController {
         return port.validarUsuarioPorNombreUsuarioUCorreo(usuarioUCorreo, claveUsuario);
     }
 
+    private static java.util.List<com.portafolio.servicios.PersonaUsuario> listarInformacionCompletaTodosLosUsuarios() {
+        com.portafolio.servicios.WSGestionarUsuario_Service service = new com.portafolio.servicios.WSGestionarUsuario_Service();
+        com.portafolio.servicios.WSGestionarUsuario port = service.getWSGestionarUsuarioPort();
+        return port.listarInformacionCompletaTodosLosUsuarios();
+    }
+
+    
+    
+    
 }
