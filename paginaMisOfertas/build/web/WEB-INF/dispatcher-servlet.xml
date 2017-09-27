@@ -27,6 +27,7 @@
                 <prop key="encargado.htm">encargadoController</prop>
                 <prop key="gerente.htm">gerenteController</prop>
                 <prop key="cerrarSesion.htm">cerrarSesionController</prop>
+                <prop key="registroUsuario.htm">registroUsuarioController</prop>
             </props>
         </property>
     </bean>
@@ -69,5 +70,8 @@
     
      <bean id="cerrarSesionController"
                  class="com.portafolio.servicios.CerrarSesionController"
+    />
+     <bean id="registroUsuarioController"
+          class="com.portafolio.servicios.RegistroUsuarioController"
     />
 </beans>
