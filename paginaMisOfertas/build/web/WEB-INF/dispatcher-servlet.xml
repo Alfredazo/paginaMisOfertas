@@ -23,6 +23,9 @@
                 <prop key="home.htm">homeController</prop>
                 <prop key="login.htm">loginController</prop>
                 <prop key="administrador.htm">administradorController</prop>
+                <prop key="consumidor.htm">consumidorController</prop>
+                <prop key="encargado.htm">encargadoController</prop>
+                <prop key="gerente.htm">gerenteController</prop>
             </props>
         </property>
     </bean>
@@ -48,6 +51,18 @@
     />
 
     <bean id="administradorController"
-              class="com.portafolio.servicios.AdminsitradorController"
+          class="com.portafolio.servicios.AdminsitradorController"
+    />
+    
+    <bean id="consumidorController"
+           class="com.portafolio.servicios.ConsumidorController"
+    />
+     
+    <bean id="encargadoController"
+              class="com.portafolio.servicios.EncargadoController"
+    />
+        
+    <bean id="gerenteController"
+                 class="com.portafolio.servicios.GerenteController"
     />
 </beans>

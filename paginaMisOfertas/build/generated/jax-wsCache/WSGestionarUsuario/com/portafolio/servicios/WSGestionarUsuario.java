@@ -63,36 +63,6 @@ public interface WSGestionarUsuario {
 
     /**
      * 
-     * @param claveUsuario
-     * @param usuarioUCorreo
-     * @return
-     *     returns boolean
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "validarUsuarioPorNombreUsuarioUCorreo", targetNamespace = "http://service.portafolio.com/", className = "com.portafolio.servicios.ValidarUsuarioPorNombreUsuarioUCorreo")
-    @ResponseWrapper(localName = "validarUsuarioPorNombreUsuarioUCorreoResponse", targetNamespace = "http://service.portafolio.com/", className = "com.portafolio.servicios.ValidarUsuarioPorNombreUsuarioUCorreoResponse")
-    @Action(input = "http://service.portafolio.com/WSGestionarUsuario/validarUsuarioPorNombreUsuarioUCorreoRequest", output = "http://service.portafolio.com/WSGestionarUsuario/validarUsuarioPorNombreUsuarioUCorreoResponse")
-    public boolean validarUsuarioPorNombreUsuarioUCorreo(
-        @WebParam(name = "usuarioUCorreo", targetNamespace = "")
-        String usuarioUCorreo,
-        @WebParam(name = "claveUsuario", targetNamespace = "")
-        String claveUsuario);
-
-    /**
-     * 
-     * @return
-     *     returns java.util.List<com.portafolio.servicios.PersonaUsuario>
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "listarInformacionCompletaTodosLosUsuarios", targetNamespace = "http://service.portafolio.com/", className = "com.portafolio.servicios.ListarInformacionCompletaTodosLosUsuarios")
-    @ResponseWrapper(localName = "listarInformacionCompletaTodosLosUsuariosResponse", targetNamespace = "http://service.portafolio.com/", className = "com.portafolio.servicios.ListarInformacionCompletaTodosLosUsuariosResponse")
-    @Action(input = "http://service.portafolio.com/WSGestionarUsuario/listarInformacionCompletaTodosLosUsuariosRequest", output = "http://service.portafolio.com/WSGestionarUsuario/listarInformacionCompletaTodosLosUsuariosResponse")
-    public List<PersonaUsuario> listarInformacionCompletaTodosLosUsuarios();
-
-    /**
-     * 
      * @param emailUsuario
      * @return
      *     returns boolean
@@ -123,21 +93,6 @@ public interface WSGestionarUsuario {
 
     /**
      * 
-     * @param nivelUsuario
-     * @return
-     *     returns java.util.List<com.portafolio.servicios.Usuario>
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "listarUsuariosPorNivel", targetNamespace = "http://service.portafolio.com/", className = "com.portafolio.servicios.ListarUsuariosPorNivel")
-    @ResponseWrapper(localName = "listarUsuariosPorNivelResponse", targetNamespace = "http://service.portafolio.com/", className = "com.portafolio.servicios.ListarUsuariosPorNivelResponse")
-    @Action(input = "http://service.portafolio.com/WSGestionarUsuario/listarUsuariosPorNivelRequest", output = "http://service.portafolio.com/WSGestionarUsuario/listarUsuariosPorNivelResponse")
-    public List<Usuario> listarUsuariosPorNivel(
-        @WebParam(name = "nivelUsuario", targetNamespace = "")
-        int nivelUsuario);
-
-    /**
-     * 
      * @param rangoInicial
      * @param rangoFinal
      * @return
@@ -157,6 +112,21 @@ public interface WSGestionarUsuario {
     /**
      * 
      * @param nivelUsuario
+     * @return
+     *     returns java.util.List<com.portafolio.servicios.Usuario>
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "listarUsuariosPorNivel", targetNamespace = "http://service.portafolio.com/", className = "com.portafolio.servicios.ListarUsuariosPorNivel")
+    @ResponseWrapper(localName = "listarUsuariosPorNivelResponse", targetNamespace = "http://service.portafolio.com/", className = "com.portafolio.servicios.ListarUsuariosPorNivelResponse")
+    @Action(input = "http://service.portafolio.com/WSGestionarUsuario/listarUsuariosPorNivelRequest", output = "http://service.portafolio.com/WSGestionarUsuario/listarUsuariosPorNivelResponse")
+    public List<Usuario> listarUsuariosPorNivel(
+        @WebParam(name = "nivelUsuario", targetNamespace = "")
+        int nivelUsuario);
+
+    /**
+     * 
+     * @param nivelUsuario
      * @param claveUsuario
      * @param emailUsuario
      * @param nombreUsuario
@@ -171,6 +141,36 @@ public interface WSGestionarUsuario {
     @ResponseWrapper(localName = "ingresarUsuarioResponse", targetNamespace = "http://service.portafolio.com/", className = "com.portafolio.servicios.IngresarUsuarioResponse")
     @Action(input = "http://service.portafolio.com/WSGestionarUsuario/ingresarUsuarioRequest", output = "http://service.portafolio.com/WSGestionarUsuario/ingresarUsuarioResponse")
     public boolean ingresarUsuario(
+        @WebParam(name = "nombreUsuario", targetNamespace = "")
+        String nombreUsuario,
+        @WebParam(name = "claveUsuario", targetNamespace = "")
+        String claveUsuario,
+        @WebParam(name = "emailUsuario", targetNamespace = "")
+        String emailUsuario,
+        @WebParam(name = "puntosAcumulados", targetNamespace = "")
+        int puntosAcumulados,
+        @WebParam(name = "nivelUsuario", targetNamespace = "")
+        int nivelUsuario,
+        @WebParam(name = "urlImagenUsuario", targetNamespace = "")
+        String urlImagenUsuario);
+
+    /**
+     * 
+     * @param nivelUsuario
+     * @param claveUsuario
+     * @param emailUsuario
+     * @param nombreUsuario
+     * @param puntosAcumulados
+     * @param urlImagenUsuario
+     * @return
+     *     returns boolean
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "modificarUsuario", targetNamespace = "http://service.portafolio.com/", className = "com.portafolio.servicios.ModificarUsuario")
+    @ResponseWrapper(localName = "modificarUsuarioResponse", targetNamespace = "http://service.portafolio.com/", className = "com.portafolio.servicios.ModificarUsuarioResponse")
+    @Action(input = "http://service.portafolio.com/WSGestionarUsuario/modificarUsuarioRequest", output = "http://service.portafolio.com/WSGestionarUsuario/modificarUsuarioResponse")
+    public boolean modificarUsuario(
         @WebParam(name = "nombreUsuario", targetNamespace = "")
         String nombreUsuario,
         @WebParam(name = "claveUsuario", targetNamespace = "")
@@ -213,32 +213,47 @@ public interface WSGestionarUsuario {
 
     /**
      * 
-     * @param nivelUsuario
+     * @param correoUNombre
+     * @return
+     *     returns int
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "devolverNivelUsuario", targetNamespace = "http://service.portafolio.com/", className = "com.portafolio.servicios.DevolverNivelUsuario")
+    @ResponseWrapper(localName = "devolverNivelUsuarioResponse", targetNamespace = "http://service.portafolio.com/", className = "com.portafolio.servicios.DevolverNivelUsuarioResponse")
+    @Action(input = "http://service.portafolio.com/WSGestionarUsuario/devolverNivelUsuarioRequest", output = "http://service.portafolio.com/WSGestionarUsuario/devolverNivelUsuarioResponse")
+    public int devolverNivelUsuario(
+        @WebParam(name = "correoUNombre", targetNamespace = "")
+        String correoUNombre);
+
+    /**
+     * 
+     * @return
+     *     returns java.util.List<com.portafolio.servicios.PersonaUsuario>
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "listarInformacionCompletaTodosLosUsuarios", targetNamespace = "http://service.portafolio.com/", className = "com.portafolio.servicios.ListarInformacionCompletaTodosLosUsuarios")
+    @ResponseWrapper(localName = "listarInformacionCompletaTodosLosUsuariosResponse", targetNamespace = "http://service.portafolio.com/", className = "com.portafolio.servicios.ListarInformacionCompletaTodosLosUsuariosResponse")
+    @Action(input = "http://service.portafolio.com/WSGestionarUsuario/listarInformacionCompletaTodosLosUsuariosRequest", output = "http://service.portafolio.com/WSGestionarUsuario/listarInformacionCompletaTodosLosUsuariosResponse")
+    public List<PersonaUsuario> listarInformacionCompletaTodosLosUsuarios();
+
+    /**
+     * 
      * @param claveUsuario
-     * @param emailUsuario
-     * @param nombreUsuario
-     * @param puntosAcumulados
-     * @param urlImagenUsuario
+     * @param usuarioUCorreo
      * @return
      *     returns boolean
      */
     @WebMethod
     @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "modificarUsuario", targetNamespace = "http://service.portafolio.com/", className = "com.portafolio.servicios.ModificarUsuario")
-    @ResponseWrapper(localName = "modificarUsuarioResponse", targetNamespace = "http://service.portafolio.com/", className = "com.portafolio.servicios.ModificarUsuarioResponse")
-    @Action(input = "http://service.portafolio.com/WSGestionarUsuario/modificarUsuarioRequest", output = "http://service.portafolio.com/WSGestionarUsuario/modificarUsuarioResponse")
-    public boolean modificarUsuario(
-        @WebParam(name = "nombreUsuario", targetNamespace = "")
-        String nombreUsuario,
+    @RequestWrapper(localName = "validarUsuarioPorNombreUsuarioUCorreo", targetNamespace = "http://service.portafolio.com/", className = "com.portafolio.servicios.ValidarUsuarioPorNombreUsuarioUCorreo")
+    @ResponseWrapper(localName = "validarUsuarioPorNombreUsuarioUCorreoResponse", targetNamespace = "http://service.portafolio.com/", className = "com.portafolio.servicios.ValidarUsuarioPorNombreUsuarioUCorreoResponse")
+    @Action(input = "http://service.portafolio.com/WSGestionarUsuario/validarUsuarioPorNombreUsuarioUCorreoRequest", output = "http://service.portafolio.com/WSGestionarUsuario/validarUsuarioPorNombreUsuarioUCorreoResponse")
+    public boolean validarUsuarioPorNombreUsuarioUCorreo(
+        @WebParam(name = "usuarioUCorreo", targetNamespace = "")
+        String usuarioUCorreo,
         @WebParam(name = "claveUsuario", targetNamespace = "")
-        String claveUsuario,
-        @WebParam(name = "emailUsuario", targetNamespace = "")
-        String emailUsuario,
-        @WebParam(name = "puntosAcumulados", targetNamespace = "")
-        int puntosAcumulados,
-        @WebParam(name = "nivelUsuario", targetNamespace = "")
-        int nivelUsuario,
-        @WebParam(name = "urlImagenUsuario", targetNamespace = "")
-        String urlImagenUsuario);
+        String claveUsuario);
 
 }

@@ -28,6 +28,8 @@ public class ObjectFactory {
     private final static QName _ComprobarNombreUsuarioResponse_QNAME = new QName("http://service.portafolio.com/", "comprobarNombreUsuarioResponse");
     private final static QName _ComprobarsiExisteEmail_QNAME = new QName("http://service.portafolio.com/", "comprobarsiExisteEmail");
     private final static QName _ComprobarsiExisteEmailResponse_QNAME = new QName("http://service.portafolio.com/", "comprobarsiExisteEmailResponse");
+    private final static QName _DevolverNivelUsuario_QNAME = new QName("http://service.portafolio.com/", "devolverNivelUsuario");
+    private final static QName _DevolverNivelUsuarioResponse_QNAME = new QName("http://service.portafolio.com/", "devolverNivelUsuarioResponse");
     private final static QName _EliminarUsuario_QNAME = new QName("http://service.portafolio.com/", "eliminarUsuario");
     private final static QName _EliminarUsuarioResponse_QNAME = new QName("http://service.portafolio.com/", "eliminarUsuarioResponse");
     private final static QName _IngresarUsuario_QNAME = new QName("http://service.portafolio.com/", "ingresarUsuario");
@@ -86,6 +88,22 @@ public class ObjectFactory {
      */
     public ComprobarsiExisteEmailResponse createComprobarsiExisteEmailResponse() {
         return new ComprobarsiExisteEmailResponse();
+    }
+
+    /**
+     * Create an instance of {@link DevolverNivelUsuario }
+     * 
+     */
+    public DevolverNivelUsuario createDevolverNivelUsuario() {
+        return new DevolverNivelUsuario();
+    }
+
+    /**
+     * Create an instance of {@link DevolverNivelUsuarioResponse }
+     * 
+     */
+    public DevolverNivelUsuarioResponse createDevolverNivelUsuarioResponse() {
+        return new DevolverNivelUsuarioResponse();
     }
 
     /**
@@ -298,6 +316,24 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "http://service.portafolio.com/", name = "comprobarsiExisteEmailResponse")
     public JAXBElement<ComprobarsiExisteEmailResponse> createComprobarsiExisteEmailResponse(ComprobarsiExisteEmailResponse value) {
         return new JAXBElement<ComprobarsiExisteEmailResponse>(_ComprobarsiExisteEmailResponse_QNAME, ComprobarsiExisteEmailResponse.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link DevolverNivelUsuario }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://service.portafolio.com/", name = "devolverNivelUsuario")
+    public JAXBElement<DevolverNivelUsuario> createDevolverNivelUsuario(DevolverNivelUsuario value) {
+        return new JAXBElement<DevolverNivelUsuario>(_DevolverNivelUsuario_QNAME, DevolverNivelUsuario.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link DevolverNivelUsuarioResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://service.portafolio.com/", name = "devolverNivelUsuarioResponse")
+    public JAXBElement<DevolverNivelUsuarioResponse> createDevolverNivelUsuarioResponse(DevolverNivelUsuarioResponse value) {
+        return new JAXBElement<DevolverNivelUsuarioResponse>(_DevolverNivelUsuarioResponse_QNAME, DevolverNivelUsuarioResponse.class, null, value);
     }
 
     /**

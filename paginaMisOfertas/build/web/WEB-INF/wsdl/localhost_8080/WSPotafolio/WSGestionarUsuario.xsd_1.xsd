@@ -8,6 +8,10 @@
 
 <xs:element name="comprobarsiExisteEmailResponse" type="tns:comprobarsiExisteEmailResponse"/>
 
+<xs:element name="devolverNivelUsuario" type="tns:devolverNivelUsuario"/>
+
+<xs:element name="devolverNivelUsuarioResponse" type="tns:devolverNivelUsuarioResponse"/>
+
 <xs:element name="eliminarUsuario" type="tns:eliminarUsuario"/>
 
 <xs:element name="eliminarUsuarioResponse" type="tns:eliminarUsuarioResponse"/>
@@ -47,18 +51,6 @@
 <xs:element name="validarUsuarioPorNombreUsuarioUCorreo" type="tns:validarUsuarioPorNombreUsuarioUCorreo"/>
 
 <xs:element name="validarUsuarioPorNombreUsuarioUCorreoResponse" type="tns:validarUsuarioPorNombreUsuarioUCorreoResponse"/>
-
-<xs:complexType name="eliminarUsuario">
-<xs:sequence>
-<xs:element name="nombreUsuario" type="xs:string" minOccurs="0"/>
-</xs:sequence>
-</xs:complexType>
-
-<xs:complexType name="eliminarUsuarioResponse">
-<xs:sequence>
-<xs:element name="return" type="xs:boolean"/>
-</xs:sequence>
-</xs:complexType>
 
 <xs:complexType name="listarInformacionCompletaDelUsuariosPorUsuarioClave">
 <xs:sequence>
@@ -100,19 +92,6 @@
 <xs:complexType name="validarUsuarioPorNombreUsuarioUCorreoResponse">
 <xs:sequence>
 <xs:element name="return" type="xs:boolean"/>
-</xs:sequence>
-</xs:complexType>
-
-<xs:complexType name="listarInformacionCompletaDelUsuariosPorCorreoClave">
-<xs:sequence>
-<xs:element name="correoUsuario" type="xs:string" minOccurs="0"/>
-<xs:element name="claveUsuario" type="xs:string" minOccurs="0"/>
-</xs:sequence>
-</xs:complexType>
-
-<xs:complexType name="listarInformacionCompletaDelUsuariosPorCorreoClaveResponse">
-<xs:sequence>
-<xs:element name="return" type="tns:personaUsuario" minOccurs="0" maxOccurs="unbounded"/>
 </xs:sequence>
 </xs:complexType>
 
@@ -167,16 +146,6 @@
 </xs:sequence>
 </xs:complexType>
 
-<xs:complexType name="listarInformacionCompletaTodosLosUsuarios">
-<xs:sequence/>
-</xs:complexType>
-
-<xs:complexType name="listarInformacionCompletaTodosLosUsuariosResponse">
-<xs:sequence>
-<xs:element name="return" type="tns:personaUsuario" minOccurs="0" maxOccurs="unbounded"/>
-</xs:sequence>
-</xs:complexType>
-
 <xs:complexType name="comprobarsiExisteEmail">
 <xs:sequence>
 <xs:element name="emailUsuario" type="xs:string" minOccurs="0"/>
@@ -184,23 +153,6 @@
 </xs:complexType>
 
 <xs:complexType name="comprobarsiExisteEmailResponse">
-<xs:sequence>
-<xs:element name="return" type="xs:boolean"/>
-</xs:sequence>
-</xs:complexType>
-
-<xs:complexType name="ingresarUsuario">
-<xs:sequence>
-<xs:element name="nombreUsuario" type="xs:string" minOccurs="0"/>
-<xs:element name="claveUsuario" type="xs:string" minOccurs="0"/>
-<xs:element name="emailUsuario" type="xs:string" minOccurs="0"/>
-<xs:element name="puntosAcumulados" type="xs:int"/>
-<xs:element name="nivelUsuario" type="xs:int"/>
-<xs:element name="urlImagenUsuario" type="xs:string" minOccurs="0"/>
-</xs:sequence>
-</xs:complexType>
-
-<xs:complexType name="ingresarUsuarioResponse">
 <xs:sequence>
 <xs:element name="return" type="xs:boolean"/>
 </xs:sequence>
@@ -228,6 +180,70 @@
 <xs:complexType name="listarUsuariosPorRangoDePuntosResponse">
 <xs:sequence>
 <xs:element name="return" type="tns:usuario" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="devolverNivelUsuario">
+<xs:sequence>
+<xs:element name="correoUNombre" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="devolverNivelUsuarioResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="eliminarUsuario">
+<xs:sequence>
+<xs:element name="nombreUsuario" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="eliminarUsuarioResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="listarInformacionCompletaDelUsuariosPorCorreoClave">
+<xs:sequence>
+<xs:element name="correoUsuario" type="xs:string" minOccurs="0"/>
+<xs:element name="claveUsuario" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="listarInformacionCompletaDelUsuariosPorCorreoClaveResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:personaUsuario" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="ingresarUsuario">
+<xs:sequence>
+<xs:element name="nombreUsuario" type="xs:string" minOccurs="0"/>
+<xs:element name="claveUsuario" type="xs:string" minOccurs="0"/>
+<xs:element name="emailUsuario" type="xs:string" minOccurs="0"/>
+<xs:element name="puntosAcumulados" type="xs:int"/>
+<xs:element name="nivelUsuario" type="xs:int"/>
+<xs:element name="urlImagenUsuario" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="ingresarUsuarioResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="listarInformacionCompletaTodosLosUsuarios">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="listarInformacionCompletaTodosLosUsuariosResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:personaUsuario" minOccurs="0" maxOccurs="unbounded"/>
 </xs:sequence>
 </xs:complexType>
 </xs:schema>

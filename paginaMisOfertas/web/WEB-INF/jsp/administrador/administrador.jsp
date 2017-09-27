@@ -9,7 +9,7 @@
     <body>
         <h1>Bienvenido al Panel de Administración</h1>
         <div class="">
-            <h3> Nombre Adminsitrdor: </h3><c:out value="${nombreSesion}"/>
+            <h3> Nombre Adminsitrdor: </h3><c:out value="${nombre}"/>
         </div>
         <div class="">
             <h3>Listado de Personas</h3>
