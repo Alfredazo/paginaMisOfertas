@@ -14,5 +14,6 @@
     <body>
         <h1>Hello Encargado!</h1>
         Nombre: ${nombreSesion}
+        <a href="cerrarSesion.htm">Cerrar Sesión</a>
     </body>
 </html>

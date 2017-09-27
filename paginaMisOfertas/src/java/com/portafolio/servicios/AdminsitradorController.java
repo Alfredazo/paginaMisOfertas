@@ -10,7 +10,6 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 @RequestMapping("administrador.htm")
 public class AdminsitradorController {
-
     @RequestMapping(method = RequestMethod.GET)
     public ModelAndView administrador(HttpSession sesion) {        
         String nombre = (String) sesion.getAttribute("nombre");

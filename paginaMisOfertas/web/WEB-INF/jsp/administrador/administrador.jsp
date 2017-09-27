@@ -10,6 +10,7 @@
         <h1>Bienvenido al Panel de Administración</h1>
         <div class="">
             <h3> Nombre Adminsitrdor: </h3><c:out value="${nombre}"/>
+            <a href="cerrarSesion.htm">Cerrar Sesión</a>
         </div>
         <div class="">
             <h3>Listado de Personas</h3>
@@ -39,7 +40,7 @@
                         <td>${map.puntosAcumulados}</td>                        
                         <td>${map.nivelUsuario}</td>                        
                         <td>${map.usuarioID}</td>                        
-                        
+
                     </tr>
                 </c:forEach>
             </table>

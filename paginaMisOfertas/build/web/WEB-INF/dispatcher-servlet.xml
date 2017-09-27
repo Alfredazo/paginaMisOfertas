@@ -26,6 +26,7 @@
                 <prop key="consumidor.htm">consumidorController</prop>
                 <prop key="encargado.htm">encargadoController</prop>
                 <prop key="gerente.htm">gerenteController</prop>
+                <prop key="cerrarSesion.htm">cerrarSesionController</prop>
             </props>
         </property>
     </bean>
@@ -64,5 +65,9 @@
         
     <bean id="gerenteController"
                  class="com.portafolio.servicios.GerenteController"
+    />
+    
+     <bean id="cerrarSesionController"
+                 class="com.portafolio.servicios.CerrarSesionController"
     />
 </beans>
