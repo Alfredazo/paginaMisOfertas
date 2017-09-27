@@ -28,7 +28,7 @@ public class GerenteController {
                 /*crear la vista aca recien*/                 
                 ModelAndView mav = new ModelAndView();
                 mav.setViewName("gerente/gerente");
-                mav.addObject("nombre", nombre);
+                mav.addObject("nombreSesion", nombre);
                 return mav;                
             }
 

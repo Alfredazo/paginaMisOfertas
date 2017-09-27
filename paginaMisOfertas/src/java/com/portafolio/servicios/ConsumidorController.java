@@ -18,17 +18,29 @@ public class ConsumidorController {
 
     @RequestMapping(method = RequestMethod.GET)
     public ModelAndView consumidor(HttpSession sesion) {
-        ModelAndView mav = new ModelAndView();
-        mav.setViewName("consumidor/consumidor");
         String nombre = (String) sesion.getAttribute("nombre");
+        if (nombre == null) {
+            return new ModelAndView("redirect:/login.htm");
+        } else {
+            int nivelUsuarioSesion = (int) sesion.getAttribute("nivelUsuarioSesion");
+            if (nivelUsuarioSesion == 1 || nivelUsuarioSesion == 2) {
+                return new ModelAndView("redirect:/home.htm");
+            } else {
+                /*crear la vista aca recien*/
+                ModelAndView mav = new ModelAndView();
+                mav.setViewName("consumidor/consumidor");                
 
 //        ArrayList<PersonaUsuario> listado;
 //        PersonaUsuario dato = null;
 //        listado = (ArrayList<PersonaUsuario>) sesion.getAttribute("listadoPersonas");          
-          mav.addObject("nombreSesion", nombre);
+               mav.addObject("nombreSesion", nombre);
 //        mav.addObject("listadoPersonas",listado);
 //        mav.addObject("dato",dato);
-        return mav;
+                return mav;
+            }
+
+        }
 
     }
+
 }
