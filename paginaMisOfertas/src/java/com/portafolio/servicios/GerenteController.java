@@ -5,6 +5,7 @@
  */
 package com.portafolio.servicios;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -14,20 +15,23 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 @RequestMapping("gerente.htm")
 public class GerenteController {
-
     @RequestMapping(method = RequestMethod.GET)
-    public ModelAndView gerente(HttpSession sesion) {
-        ModelAndView mav = new ModelAndView();
-        mav.setViewName("gerente/gerente");
-        String nombre = (String) sesion.getAttribute("nombre");
+    public ModelAndView gerente(HttpServletRequest request,HttpSession sesion) {       
+        String nombre = (String) sesion.getAttribute("nombre"); 
+        if (nombre == null) {
+            return new ModelAndView("redirect:/login.htm");
+        } else {
+            int nivelUsuarioSesion = (int) sesion.getAttribute("nivelUsuarioSesion");
+            if (nivelUsuarioSesion == 0 || nivelUsuarioSesion == 1) {
+                return new ModelAndView("redirect:/home.htm");              
+            } else {                
+                /*crear la vista aca recien*/                 
+                ModelAndView mav = new ModelAndView();
+                mav.setViewName("gerente/gerente");
+                mav.addObject("nombre", nombre);
+                return mav;                
+            }
 
-//        ArrayList<PersonaUsuario> listado;
-//        PersonaUsuario dato = null;
-//        listado = (ArrayList<PersonaUsuario>) sesion.getAttribute("listadoPersonas");          
-        mav.addObject("nombreSesion", nombre);
-//        mav.addObject("listadoPersonas",listado);
-//        mav.addObject("dato",dato);
-        return mav;
-
+        }
     }
 }

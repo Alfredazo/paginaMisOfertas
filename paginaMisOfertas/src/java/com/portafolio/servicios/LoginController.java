@@ -41,22 +41,29 @@ public class LoginController {
 
             switch (nivelUsuario) {
                 case 0:
-                    /*Consumidor*/
-                    ModelAndView mavConsumidor = new ModelAndView("");
-                    mavConsumidor.setViewName("consumidor/consumidor");
+                    /*Consumidor*/      
                     sesion.setAttribute("nombre", email);
-                    System.out.println("consum");
-                    return mavConsumidor;                    
+                    sesion.setAttribute("nivelUsuarioSesion", nivelUsuario);
+                    
+                    return new ModelAndView("redirect:/consumidor.htm");                   
                 case 1:
                     /*Encargado de Tienda*/
                     ModelAndView mavEncargado = new ModelAndView("");
                     mavEncargado.setViewName("encargado/encargado");
+                    
+                    sesion.setAttribute("nombre", email);
+                    sesion.setAttribute("nivelUsuarioSesion", nivelUsuario);
+                    
                     return mavEncargado;
                 case 2:
                     /*Gerente*/
                     ModelAndView mavGerente = new ModelAndView("");
                     mavGerente.setViewName("gerente/gerente");
-                    return mavGerente;
+                    
+                    sesion.setAttribute("nombre", email);
+                    sesion.setAttribute("nivelUsuarioSesion", nivelUsuario);
+                    
+                    return  mavGerente;
 
                 case 3:
                     /*Administrador*/
@@ -66,6 +73,7 @@ public class LoginController {
                     listado = (ArrayList<PersonaUsuario>) listarInformacionCompletaTodosLosUsuarios();
                     sesion.setAttribute("listadoPersonas", listado);
                     sesion.setAttribute("nombre", email);
+                    sesion.setAttribute("nivelUsuarioSesion", nivelUsuario);
                     
                     System.out.println("admi");
                     return mav;

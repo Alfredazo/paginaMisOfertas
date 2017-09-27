@@ -25,7 +25,7 @@ public class ConsumidorController {
 //        ArrayList<PersonaUsuario> listado;
 //        PersonaUsuario dato = null;
 //        listado = (ArrayList<PersonaUsuario>) sesion.getAttribute("listadoPersonas");          
-        mav.addObject("nombreSesion", nombre);
+          mav.addObject("nombreSesion", nombre);
 //        mav.addObject("listadoPersonas",listado);
 //        mav.addObject("dato",dato);
         return mav;
