@@ -3,12 +3,23 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+<<<<<<< HEAD
             <file>file:/C:/paginaMisOfertas/paginaMisOfertas/web/WEB-INF/jsp/home/registroUsuario.jsp</file>
             <file>file:/C:/paginaMisOfertas/paginaMisOfertas/src/java/com/portafolio/modelo/PersonaUsuario.java</file>
             <file>file:/C:/paginaMisOfertas/paginaMisOfertas/src/java/com/portafolio/servicios/RegistroUsuarioController.java</file>
             <file>file:/C:/paginaMisOfertas/paginaMisOfertas/src/java/com/portafolio/servicios/LoginController.java</file>
             <file>file:/C:/paginaMisOfertas/paginaMisOfertas/src/java/com/portafolio/servicios/NewMain.java</file>
             <file>file:/C:/paginaMisOfertas/paginaMisOfertas/web/WEB-INF/jsp/home/login.jsp</file>
+=======
+            <file>file:/C:/Users/Alfredazo/Desktop/paginaMisOfertas/paginaMisOfertas/web/WEB-INF/jsp/home/login.jsp</file>
+            <file>file:/C:/Users/Alfredazo/Desktop/paginaMisOfertas/paginaMisOfertas/web/WEB-INF/applicationContext.xml</file>
+            <file>file:/C:/Users/Alfredazo/Desktop/paginaMisOfertas/paginaMisOfertas/src/java/com/portafolio/servicios/RegistroUsuarioController.java</file>
+            <file>file:/C:/Users/Alfredazo/Desktop/paginaMisOfertas/paginaMisOfertas/web/WEB-INF/dispatcher-servlet.xml</file>
+            <file>file:/C:/Users/Alfredazo/Desktop/paginaMisOfertas/paginaMisOfertas/nbproject/build-impl.xml</file>
+            <file>file:/C:/Users/Alfredazo/Desktop/paginaMisOfertas/paginaMisOfertas/src/java/com/portafolio/servicios/AdminsitradorController.java</file>
+            <file>file:/C:/Users/Alfredazo/Desktop/paginaMisOfertas/paginaMisOfertas/src/java/com/portafolio/servicios/EncargadoController.java</file>
+            <file>file:/C:/Users/Alfredazo/Desktop/paginaMisOfertas/paginaMisOfertas/src/java/com/portafolio/servicios/LoginController.java</file>
+>>>>>>> 1f3e7668aefe2853daa899eaa5f9ba47e1b9670f
         </group>
     </open-files>
 </project-private>
