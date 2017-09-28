@@ -66,19 +66,6 @@
 </xs:sequence>
 </xs:complexType>
 
-<xs:complexType name="validarUsuarioPorNombreUsuarioUCorreo">
-<xs:sequence>
-<xs:element name="usuarioUCorreo" type="xs:string" minOccurs="0"/>
-<xs:element name="claveUsuario" type="xs:string" minOccurs="0"/>
-</xs:sequence>
-</xs:complexType>
-
-<xs:complexType name="validarUsuarioPorNombreUsuarioUCorreoResponse">
-<xs:sequence>
-<xs:element name="return" type="xs:boolean"/>
-</xs:sequence>
-</xs:complexType>
-
 <xs:complexType name="listarInformacionCompletaDelUsuariosPorUsuarioClave">
 <xs:sequence>
 <xs:element name="nombreUsuario" type="xs:string" minOccurs="0"/>
@@ -109,13 +96,14 @@
 </xs:sequence>
 </xs:complexType>
 
-<xs:complexType name="comprobarNombreUsuario">
+<xs:complexType name="validarUsuarioPorNombreUsuarioUCorreo">
 <xs:sequence>
-<xs:element name="nombreUsuario" type="xs:string" minOccurs="0"/>
+<xs:element name="usuarioUCorreo" type="xs:string" minOccurs="0"/>
+<xs:element name="claveUsuario" type="xs:string" minOccurs="0"/>
 </xs:sequence>
 </xs:complexType>
 
-<xs:complexType name="comprobarNombreUsuarioResponse">
+<xs:complexType name="validarUsuarioPorNombreUsuarioUCorreoResponse">
 <xs:sequence>
 <xs:element name="return" type="xs:boolean"/>
 </xs:sequence>
@@ -133,6 +121,18 @@
 </xs:complexType>
 
 <xs:complexType name="modificarUsuarioResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="comprobarNombreUsuario">
+<xs:sequence>
+<xs:element name="nombreUsuario" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="comprobarNombreUsuarioResponse">
 <xs:sequence>
 <xs:element name="return" type="xs:boolean"/>
 </xs:sequence>
@@ -234,16 +234,6 @@
 </xs:sequence>
 </xs:complexType>
 
-<xs:complexType name="listarInformacionCompletaTodosLosUsuarios">
-<xs:sequence/>
-</xs:complexType>
-
-<xs:complexType name="listarInformacionCompletaTodosLosUsuariosResponse">
-<xs:sequence>
-<xs:element name="return" type="tns:personaUsuario" minOccurs="0" maxOccurs="unbounded"/>
-</xs:sequence>
-</xs:complexType>
-
 <xs:complexType name="ingresarUsuario">
 <xs:sequence>
 <xs:element name="nombreUsuario" type="xs:string" minOccurs="0"/>
@@ -258,6 +248,16 @@
 <xs:complexType name="ingresarUsuarioResponse">
 <xs:sequence>
 <xs:element name="return" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="listarInformacionCompletaTodosLosUsuarios">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="listarInformacionCompletaTodosLosUsuariosResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:personaUsuario" minOccurs="0" maxOccurs="unbounded"/>
 </xs:sequence>
 </xs:complexType>
 </xs:schema>

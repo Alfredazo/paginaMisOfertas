@@ -5,7 +5,6 @@
  */
 package com.portafolio.servicios;
 
-import com.portafolio.service.PersonaUsuario;
 import java.util.ArrayList;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -84,21 +83,23 @@ public class LoginController {
         }
     }
 
+   
+
     private static boolean validarUsuarioPorNombreUsuarioUCorreo(java.lang.String usuarioUCorreo, java.lang.String claveUsuario) {
-        com.portafolio.service.WSGestionarUsuario_Service service = new com.portafolio.service.WSGestionarUsuario_Service();
-        com.portafolio.service.WSGestionarUsuario port = service.getWSGestionarUsuarioPort();
+        com.portafolio.servicios.WSGestionarUsuario_Service service = new com.portafolio.servicios.WSGestionarUsuario_Service();
+        com.portafolio.servicios.WSGestionarUsuario port = service.getWSGestionarUsuarioPort();
         return port.validarUsuarioPorNombreUsuarioUCorreo(usuarioUCorreo, claveUsuario);
     }
 
     private static int devolverNivelUsuario(java.lang.String correoUNombre) {
-        com.portafolio.service.WSGestionarUsuario_Service service = new com.portafolio.service.WSGestionarUsuario_Service();
-        com.portafolio.service.WSGestionarUsuario port = service.getWSGestionarUsuarioPort();
+        com.portafolio.servicios.WSGestionarUsuario_Service service = new com.portafolio.servicios.WSGestionarUsuario_Service();
+        com.portafolio.servicios.WSGestionarUsuario port = service.getWSGestionarUsuarioPort();
         return port.devolverNivelUsuario(correoUNombre);
     }
 
-    private static java.util.List<com.portafolio.service.PersonaUsuario> listarInformacionCompletaTodosLosUsuarios() {
-        com.portafolio.service.WSGestionarUsuario_Service service = new com.portafolio.service.WSGestionarUsuario_Service();
-        com.portafolio.service.WSGestionarUsuario port = service.getWSGestionarUsuarioPort();
+    private static java.util.List<com.portafolio.servicios.PersonaUsuario> listarInformacionCompletaTodosLosUsuarios() {
+        com.portafolio.servicios.WSGestionarUsuario_Service service = new com.portafolio.servicios.WSGestionarUsuario_Service();
+        com.portafolio.servicios.WSGestionarUsuario port = service.getWSGestionarUsuarioPort();
         return port.listarInformacionCompletaTodosLosUsuarios();
     }
 

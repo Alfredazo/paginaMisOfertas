@@ -4,59 +4,11 @@
 <xsd:import namespace="http://service.portafolio.com/" schemaLocation="http://localhost:8080/WSPotafolio/WSGestionarUsuario?xsd=1"/>
 </xsd:schema>
 </types>
-<message name="validarUsuarioPorNombreUsuarioUCorreo">
-<part name="parameters" element="tns:validarUsuarioPorNombreUsuarioUCorreo"/>
+<message name="ingresarUsuario">
+<part name="parameters" element="tns:ingresarUsuario"/>
 </message>
-<message name="validarUsuarioPorNombreUsuarioUCorreoResponse">
-<part name="parameters" element="tns:validarUsuarioPorNombreUsuarioUCorreoResponse"/>
-</message>
-<message name="listarInformacionCompletaTodosLosUsuarios">
-<part name="parameters" element="tns:listarInformacionCompletaTodosLosUsuarios"/>
-</message>
-<message name="listarInformacionCompletaTodosLosUsuariosResponse">
-<part name="parameters" element="tns:listarInformacionCompletaTodosLosUsuariosResponse"/>
-</message>
-<message name="listarUsuariosPorNivel">
-<part name="parameters" element="tns:listarUsuariosPorNivel"/>
-</message>
-<message name="listarUsuariosPorNivelResponse">
-<part name="parameters" element="tns:listarUsuariosPorNivelResponse"/>
-</message>
-<message name="comprobarsiExisteEmail">
-<part name="parameters" element="tns:comprobarsiExisteEmail"/>
-</message>
-<message name="comprobarsiExisteEmailResponse">
-<part name="parameters" element="tns:comprobarsiExisteEmailResponse"/>
-</message>
-<message name="retornarUltimoIDUsuario">
-<part name="parameters" element="tns:retornarUltimoIDUsuario"/>
-</message>
-<message name="retornarUltimoIDUsuarioResponse">
-<part name="parameters" element="tns:retornarUltimoIDUsuarioResponse"/>
-</message>
-<message name="listarUsuariosPorRangoDePuntos">
-<part name="parameters" element="tns:listarUsuariosPorRangoDePuntos"/>
-</message>
-<message name="listarUsuariosPorRangoDePuntosResponse">
-<part name="parameters" element="tns:listarUsuariosPorRangoDePuntosResponse"/>
-</message>
-<message name="devolverNivelUsuario">
-<part name="parameters" element="tns:devolverNivelUsuario"/>
-</message>
-<message name="devolverNivelUsuarioResponse">
-<part name="parameters" element="tns:devolverNivelUsuarioResponse"/>
-</message>
-<message name="comprobarNombreUsuario">
-<part name="parameters" element="tns:comprobarNombreUsuario"/>
-</message>
-<message name="comprobarNombreUsuarioResponse">
-<part name="parameters" element="tns:comprobarNombreUsuarioResponse"/>
-</message>
-<message name="modificarUsuario">
-<part name="parameters" element="tns:modificarUsuario"/>
-</message>
-<message name="modificarUsuarioResponse">
-<part name="parameters" element="tns:modificarUsuarioResponse"/>
+<message name="ingresarUsuarioResponse">
+<part name="parameters" element="tns:ingresarUsuarioResponse"/>
 </message>
 <message name="eliminarUsuario">
 <part name="parameters" element="tns:eliminarUsuario"/>
@@ -70,17 +22,11 @@
 <message name="listarUsuariosResponse">
 <part name="parameters" element="tns:listarUsuariosResponse"/>
 </message>
-<message name="ingresarUsuario">
-<part name="parameters" element="tns:ingresarUsuario"/>
+<message name="modificarUsuario">
+<part name="parameters" element="tns:modificarUsuario"/>
 </message>
-<message name="ingresarUsuarioResponse">
-<part name="parameters" element="tns:ingresarUsuarioResponse"/>
-</message>
-<message name="listarInformacionCompletaDelUsuariosPorUsuarioClave">
-<part name="parameters" element="tns:listarInformacionCompletaDelUsuariosPorUsuarioClave"/>
-</message>
-<message name="listarInformacionCompletaDelUsuariosPorUsuarioClaveResponse">
-<part name="parameters" element="tns:listarInformacionCompletaDelUsuariosPorUsuarioClaveResponse"/>
+<message name="modificarUsuarioResponse">
+<part name="parameters" element="tns:modificarUsuarioResponse"/>
 </message>
 <message name="listarInformacionCompletaDelUsuariosPorCorreoClave">
 <part name="parameters" element="tns:listarInformacionCompletaDelUsuariosPorCorreoClave"/>
@@ -88,42 +34,64 @@
 <message name="listarInformacionCompletaDelUsuariosPorCorreoClaveResponse">
 <part name="parameters" element="tns:listarInformacionCompletaDelUsuariosPorCorreoClaveResponse"/>
 </message>
+<message name="listarInformacionCompletaDelUsuariosPorUsuarioClave">
+<part name="parameters" element="tns:listarInformacionCompletaDelUsuariosPorUsuarioClave"/>
+</message>
+<message name="listarInformacionCompletaDelUsuariosPorUsuarioClaveResponse">
+<part name="parameters" element="tns:listarInformacionCompletaDelUsuariosPorUsuarioClaveResponse"/>
+</message>
+<message name="listarUsuariosPorRangoDePuntos">
+<part name="parameters" element="tns:listarUsuariosPorRangoDePuntos"/>
+</message>
+<message name="listarUsuariosPorRangoDePuntosResponse">
+<part name="parameters" element="tns:listarUsuariosPorRangoDePuntosResponse"/>
+</message>
+<message name="listarUsuariosPorNivel">
+<part name="parameters" element="tns:listarUsuariosPorNivel"/>
+</message>
+<message name="listarUsuariosPorNivelResponse">
+<part name="parameters" element="tns:listarUsuariosPorNivelResponse"/>
+</message>
+<message name="validarUsuarioPorNombreUsuarioUCorreo">
+<part name="parameters" element="tns:validarUsuarioPorNombreUsuarioUCorreo"/>
+</message>
+<message name="validarUsuarioPorNombreUsuarioUCorreoResponse">
+<part name="parameters" element="tns:validarUsuarioPorNombreUsuarioUCorreoResponse"/>
+</message>
+<message name="listarInformacionCompletaTodosLosUsuarios">
+<part name="parameters" element="tns:listarInformacionCompletaTodosLosUsuarios"/>
+</message>
+<message name="listarInformacionCompletaTodosLosUsuariosResponse">
+<part name="parameters" element="tns:listarInformacionCompletaTodosLosUsuariosResponse"/>
+</message>
+<message name="devolverNivelUsuario">
+<part name="parameters" element="tns:devolverNivelUsuario"/>
+</message>
+<message name="devolverNivelUsuarioResponse">
+<part name="parameters" element="tns:devolverNivelUsuarioResponse"/>
+</message>
+<message name="retornarUltimoIDUsuario">
+<part name="parameters" element="tns:retornarUltimoIDUsuario"/>
+</message>
+<message name="retornarUltimoIDUsuarioResponse">
+<part name="parameters" element="tns:retornarUltimoIDUsuarioResponse"/>
+</message>
+<message name="comprobarNombreUsuario">
+<part name="parameters" element="tns:comprobarNombreUsuario"/>
+</message>
+<message name="comprobarNombreUsuarioResponse">
+<part name="parameters" element="tns:comprobarNombreUsuarioResponse"/>
+</message>
+<message name="comprobarsiExisteEmail">
+<part name="parameters" element="tns:comprobarsiExisteEmail"/>
+</message>
+<message name="comprobarsiExisteEmailResponse">
+<part name="parameters" element="tns:comprobarsiExisteEmailResponse"/>
+</message>
 <portType name="WSGestionarUsuario">
-<operation name="validarUsuarioPorNombreUsuarioUCorreo">
-<input wsam:Action="http://service.portafolio.com/WSGestionarUsuario/validarUsuarioPorNombreUsuarioUCorreoRequest" message="tns:validarUsuarioPorNombreUsuarioUCorreo"/>
-<output wsam:Action="http://service.portafolio.com/WSGestionarUsuario/validarUsuarioPorNombreUsuarioUCorreoResponse" message="tns:validarUsuarioPorNombreUsuarioUCorreoResponse"/>
-</operation>
-<operation name="listarInformacionCompletaTodosLosUsuarios">
-<input wsam:Action="http://service.portafolio.com/WSGestionarUsuario/listarInformacionCompletaTodosLosUsuariosRequest" message="tns:listarInformacionCompletaTodosLosUsuarios"/>
-<output wsam:Action="http://service.portafolio.com/WSGestionarUsuario/listarInformacionCompletaTodosLosUsuariosResponse" message="tns:listarInformacionCompletaTodosLosUsuariosResponse"/>
-</operation>
-<operation name="listarUsuariosPorNivel">
-<input wsam:Action="http://service.portafolio.com/WSGestionarUsuario/listarUsuariosPorNivelRequest" message="tns:listarUsuariosPorNivel"/>
-<output wsam:Action="http://service.portafolio.com/WSGestionarUsuario/listarUsuariosPorNivelResponse" message="tns:listarUsuariosPorNivelResponse"/>
-</operation>
-<operation name="comprobarsiExisteEmail">
-<input wsam:Action="http://service.portafolio.com/WSGestionarUsuario/comprobarsiExisteEmailRequest" message="tns:comprobarsiExisteEmail"/>
-<output wsam:Action="http://service.portafolio.com/WSGestionarUsuario/comprobarsiExisteEmailResponse" message="tns:comprobarsiExisteEmailResponse"/>
-</operation>
-<operation name="retornarUltimoIDUsuario">
-<input wsam:Action="http://service.portafolio.com/WSGestionarUsuario/retornarUltimoIDUsuarioRequest" message="tns:retornarUltimoIDUsuario"/>
-<output wsam:Action="http://service.portafolio.com/WSGestionarUsuario/retornarUltimoIDUsuarioResponse" message="tns:retornarUltimoIDUsuarioResponse"/>
-</operation>
-<operation name="listarUsuariosPorRangoDePuntos">
-<input wsam:Action="http://service.portafolio.com/WSGestionarUsuario/listarUsuariosPorRangoDePuntosRequest" message="tns:listarUsuariosPorRangoDePuntos"/>
-<output wsam:Action="http://service.portafolio.com/WSGestionarUsuario/listarUsuariosPorRangoDePuntosResponse" message="tns:listarUsuariosPorRangoDePuntosResponse"/>
-</operation>
-<operation name="devolverNivelUsuario">
-<input wsam:Action="http://service.portafolio.com/WSGestionarUsuario/devolverNivelUsuarioRequest" message="tns:devolverNivelUsuario"/>
-<output wsam:Action="http://service.portafolio.com/WSGestionarUsuario/devolverNivelUsuarioResponse" message="tns:devolverNivelUsuarioResponse"/>
-</operation>
-<operation name="comprobarNombreUsuario">
-<input wsam:Action="http://service.portafolio.com/WSGestionarUsuario/comprobarNombreUsuarioRequest" message="tns:comprobarNombreUsuario"/>
-<output wsam:Action="http://service.portafolio.com/WSGestionarUsuario/comprobarNombreUsuarioResponse" message="tns:comprobarNombreUsuarioResponse"/>
-</operation>
-<operation name="modificarUsuario">
-<input wsam:Action="http://service.portafolio.com/WSGestionarUsuario/modificarUsuarioRequest" message="tns:modificarUsuario"/>
-<output wsam:Action="http://service.portafolio.com/WSGestionarUsuario/modificarUsuarioResponse" message="tns:modificarUsuarioResponse"/>
+<operation name="ingresarUsuario">
+<input wsam:Action="http://service.portafolio.com/WSGestionarUsuario/ingresarUsuarioRequest" message="tns:ingresarUsuario"/>
+<output wsam:Action="http://service.portafolio.com/WSGestionarUsuario/ingresarUsuarioResponse" message="tns:ingresarUsuarioResponse"/>
 </operation>
 <operation name="eliminarUsuario">
 <input wsam:Action="http://service.portafolio.com/WSGestionarUsuario/eliminarUsuarioRequest" message="tns:eliminarUsuario"/>
@@ -133,94 +101,54 @@
 <input wsam:Action="http://service.portafolio.com/WSGestionarUsuario/listarUsuariosRequest" message="tns:listarUsuarios"/>
 <output wsam:Action="http://service.portafolio.com/WSGestionarUsuario/listarUsuariosResponse" message="tns:listarUsuariosResponse"/>
 </operation>
-<operation name="ingresarUsuario">
-<input wsam:Action="http://service.portafolio.com/WSGestionarUsuario/ingresarUsuarioRequest" message="tns:ingresarUsuario"/>
-<output wsam:Action="http://service.portafolio.com/WSGestionarUsuario/ingresarUsuarioResponse" message="tns:ingresarUsuarioResponse"/>
-</operation>
-<operation name="listarInformacionCompletaDelUsuariosPorUsuarioClave">
-<input wsam:Action="http://service.portafolio.com/WSGestionarUsuario/listarInformacionCompletaDelUsuariosPorUsuarioClaveRequest" message="tns:listarInformacionCompletaDelUsuariosPorUsuarioClave"/>
-<output wsam:Action="http://service.portafolio.com/WSGestionarUsuario/listarInformacionCompletaDelUsuariosPorUsuarioClaveResponse" message="tns:listarInformacionCompletaDelUsuariosPorUsuarioClaveResponse"/>
+<operation name="modificarUsuario">
+<input wsam:Action="http://service.portafolio.com/WSGestionarUsuario/modificarUsuarioRequest" message="tns:modificarUsuario"/>
+<output wsam:Action="http://service.portafolio.com/WSGestionarUsuario/modificarUsuarioResponse" message="tns:modificarUsuarioResponse"/>
 </operation>
 <operation name="listarInformacionCompletaDelUsuariosPorCorreoClave">
 <input wsam:Action="http://service.portafolio.com/WSGestionarUsuario/listarInformacionCompletaDelUsuariosPorCorreoClaveRequest" message="tns:listarInformacionCompletaDelUsuariosPorCorreoClave"/>
 <output wsam:Action="http://service.portafolio.com/WSGestionarUsuario/listarInformacionCompletaDelUsuariosPorCorreoClaveResponse" message="tns:listarInformacionCompletaDelUsuariosPorCorreoClaveResponse"/>
 </operation>
+<operation name="listarInformacionCompletaDelUsuariosPorUsuarioClave">
+<input wsam:Action="http://service.portafolio.com/WSGestionarUsuario/listarInformacionCompletaDelUsuariosPorUsuarioClaveRequest" message="tns:listarInformacionCompletaDelUsuariosPorUsuarioClave"/>
+<output wsam:Action="http://service.portafolio.com/WSGestionarUsuario/listarInformacionCompletaDelUsuariosPorUsuarioClaveResponse" message="tns:listarInformacionCompletaDelUsuariosPorUsuarioClaveResponse"/>
+</operation>
+<operation name="listarUsuariosPorRangoDePuntos">
+<input wsam:Action="http://service.portafolio.com/WSGestionarUsuario/listarUsuariosPorRangoDePuntosRequest" message="tns:listarUsuariosPorRangoDePuntos"/>
+<output wsam:Action="http://service.portafolio.com/WSGestionarUsuario/listarUsuariosPorRangoDePuntosResponse" message="tns:listarUsuariosPorRangoDePuntosResponse"/>
+</operation>
+<operation name="listarUsuariosPorNivel">
+<input wsam:Action="http://service.portafolio.com/WSGestionarUsuario/listarUsuariosPorNivelRequest" message="tns:listarUsuariosPorNivel"/>
+<output wsam:Action="http://service.portafolio.com/WSGestionarUsuario/listarUsuariosPorNivelResponse" message="tns:listarUsuariosPorNivelResponse"/>
+</operation>
+<operation name="validarUsuarioPorNombreUsuarioUCorreo">
+<input wsam:Action="http://service.portafolio.com/WSGestionarUsuario/validarUsuarioPorNombreUsuarioUCorreoRequest" message="tns:validarUsuarioPorNombreUsuarioUCorreo"/>
+<output wsam:Action="http://service.portafolio.com/WSGestionarUsuario/validarUsuarioPorNombreUsuarioUCorreoResponse" message="tns:validarUsuarioPorNombreUsuarioUCorreoResponse"/>
+</operation>
+<operation name="listarInformacionCompletaTodosLosUsuarios">
+<input wsam:Action="http://service.portafolio.com/WSGestionarUsuario/listarInformacionCompletaTodosLosUsuariosRequest" message="tns:listarInformacionCompletaTodosLosUsuarios"/>
+<output wsam:Action="http://service.portafolio.com/WSGestionarUsuario/listarInformacionCompletaTodosLosUsuariosResponse" message="tns:listarInformacionCompletaTodosLosUsuariosResponse"/>
+</operation>
+<operation name="devolverNivelUsuario">
+<input wsam:Action="http://service.portafolio.com/WSGestionarUsuario/devolverNivelUsuarioRequest" message="tns:devolverNivelUsuario"/>
+<output wsam:Action="http://service.portafolio.com/WSGestionarUsuario/devolverNivelUsuarioResponse" message="tns:devolverNivelUsuarioResponse"/>
+</operation>
+<operation name="retornarUltimoIDUsuario">
+<input wsam:Action="http://service.portafolio.com/WSGestionarUsuario/retornarUltimoIDUsuarioRequest" message="tns:retornarUltimoIDUsuario"/>
+<output wsam:Action="http://service.portafolio.com/WSGestionarUsuario/retornarUltimoIDUsuarioResponse" message="tns:retornarUltimoIDUsuarioResponse"/>
+</operation>
+<operation name="comprobarNombreUsuario">
+<input wsam:Action="http://service.portafolio.com/WSGestionarUsuario/comprobarNombreUsuarioRequest" message="tns:comprobarNombreUsuario"/>
+<output wsam:Action="http://service.portafolio.com/WSGestionarUsuario/comprobarNombreUsuarioResponse" message="tns:comprobarNombreUsuarioResponse"/>
+</operation>
+<operation name="comprobarsiExisteEmail">
+<input wsam:Action="http://service.portafolio.com/WSGestionarUsuario/comprobarsiExisteEmailRequest" message="tns:comprobarsiExisteEmail"/>
+<output wsam:Action="http://service.portafolio.com/WSGestionarUsuario/comprobarsiExisteEmailResponse" message="tns:comprobarsiExisteEmailResponse"/>
+</operation>
 </portType>
 <binding name="WSGestionarUsuarioPortBinding" type="tns:WSGestionarUsuario">
 <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
-<operation name="validarUsuarioPorNombreUsuarioUCorreo">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
-<operation name="listarInformacionCompletaTodosLosUsuarios">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
-<operation name="listarUsuariosPorNivel">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
-<operation name="comprobarsiExisteEmail">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
-<operation name="retornarUltimoIDUsuario">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
-<operation name="listarUsuariosPorRangoDePuntos">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
-<operation name="devolverNivelUsuario">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
-<operation name="comprobarNombreUsuario">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
-<operation name="modificarUsuario">
+<operation name="ingresarUsuario">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>
@@ -247,7 +175,16 @@
 <soap:body use="literal"/>
 </output>
 </operation>
-<operation name="ingresarUsuario">
+<operation name="modificarUsuario">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="listarInformacionCompletaDelUsuariosPorCorreoClave">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>
@@ -265,7 +202,70 @@
 <soap:body use="literal"/>
 </output>
 </operation>
-<operation name="listarInformacionCompletaDelUsuariosPorCorreoClave">
+<operation name="listarUsuariosPorRangoDePuntos">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="listarUsuariosPorNivel">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="validarUsuarioPorNombreUsuarioUCorreo">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="listarInformacionCompletaTodosLosUsuarios">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="devolverNivelUsuario">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="retornarUltimoIDUsuario">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="comprobarNombreUsuario">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="comprobarsiExisteEmail">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>
