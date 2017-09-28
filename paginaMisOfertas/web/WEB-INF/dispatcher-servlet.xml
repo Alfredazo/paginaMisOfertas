@@ -27,7 +27,7 @@
                 <prop key="encargado.htm">encargadoController</prop>
                 <prop key="gerente.htm">gerenteController</prop>
                 <prop key="cerrarSesion.htm">cerrarSesionController</prop>
-                <prop key="registroUsuario.htm">registroUsuarioController</prop>
+                <prop key="registrar.htm">registroUsuarioController</prop>
             </props>
         </property>
     </bean>

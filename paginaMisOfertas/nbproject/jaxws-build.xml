@@ -28,7 +28,7 @@
     </target>
     <target name="wsimport-client-WSGestionarUsuario" depends="wsimport-init">
         <mkdir dir="${build.generated.dir}/jax-wsCache/WSGestionarUsuario"/>
-        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/WSGestionarUsuario" destdir="${build.generated.dir}/jax-wsCache/WSGestionarUsuario" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/WSGestionarUsuario/wsdl/localhost_8080/WSPotafolio/WSGestionarUsuario.wsdl" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:8080/WSPotafolio/WSGestionarUsuario?wsdl" xnocompile="true" xendorsed="true" package="com.portafolio.servicios">
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/WSGestionarUsuario" destdir="${build.generated.dir}/jax-wsCache/WSGestionarUsuario" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/WSGestionarUsuario/wsdl/localhost_8080/WSPotafolio/WSGestionarUsuario.wsdl" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:8080/WSPotafolio/WSGestionarUsuario?wsdl" xnocompile="true" xendorsed="true">
             <depends file="${basedir}/${conf-dir}xml-resources/web-service-references/WSGestionarUsuario/wsdl/localhost_8080/WSPotafolio/WSGestionarUsuario.wsdl"/>
             <produces dir="${build.generated.dir}/jax-wsCache/WSGestionarUsuario"/>
         </wsimport>
@@ -39,7 +39,7 @@
         </copy>
     </target>
     <target name="wsimport-client-clean-WSGestionarUsuario" depends="-init-project">
-        <delete dir="${build.generated.sources.dir}/jax-ws/com/portafolio/servicios"/>
+        <delete dir="${build.generated.sources.dir}/jax-ws/com/portafolio/service"/>
         <delete dir="${build.generated.dir}/jax-wsCache/WSGestionarUsuario"/>
     </target>
     <target name="wsimport-client-generate" depends="wsimport-client-WSGestionarUsuario"/>

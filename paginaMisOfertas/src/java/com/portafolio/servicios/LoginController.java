@@ -5,6 +5,7 @@
  */
 package com.portafolio.servicios;
 
+import com.portafolio.service.PersonaUsuario;
 import java.util.ArrayList;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -41,34 +42,34 @@ public class LoginController {
 
             switch (nivelUsuario) {
                 case 0:
-                    /*Consumidor*/      
+                    /*Consumidor*/
                     sesion.setAttribute("nombre", email);
                     sesion.setAttribute("nivelUsuarioSesion", nivelUsuario);
-                    
-                    return new ModelAndView("redirect:/consumidor.htm");                   
+
+                    return new ModelAndView("redirect:/consumidor.htm");
                 case 1:
-                    /*Encargado de Tienda*/                  
+                    /*Encargado de Tienda*/
                     sesion.setAttribute("nombre", email);
                     sesion.setAttribute("nivelUsuarioSesion", nivelUsuario);
-                    
+
                     return new ModelAndView("redirect:/encargado.htm");
                 case 2:
                     /*Gerente*/
                     sesion.setAttribute("nombre", email);
                     sesion.setAttribute("nivelUsuarioSesion", nivelUsuario);
-                    
+
                     return new ModelAndView("redirect:/gerente.htm");
 
                 case 3:
-                    /*Administrador*/                   
+                    /*Administrador*/
                     ArrayList<PersonaUsuario> listado = new ArrayList<PersonaUsuario>();
                     listado = (ArrayList<PersonaUsuario>) listarInformacionCompletaTodosLosUsuarios();
                     sesion.setAttribute("listadoPersonas", listado);
                     sesion.setAttribute("nombre", email);
                     sesion.setAttribute("nivelUsuarioSesion", nivelUsuario);
-                    
+
                     return new ModelAndView("redirect:/administrador.htm");
-                
+
                 default:
                     ModelAndView mavHome = new ModelAndView("");
                     mavHome.setViewName("home/home");
@@ -84,21 +85,21 @@ public class LoginController {
     }
 
     private static boolean validarUsuarioPorNombreUsuarioUCorreo(java.lang.String usuarioUCorreo, java.lang.String claveUsuario) {
-        com.portafolio.servicios.WSGestionarUsuario_Service service = new com.portafolio.servicios.WSGestionarUsuario_Service();
-        com.portafolio.servicios.WSGestionarUsuario port = service.getWSGestionarUsuarioPort();
+        com.portafolio.service.WSGestionarUsuario_Service service = new com.portafolio.service.WSGestionarUsuario_Service();
+        com.portafolio.service.WSGestionarUsuario port = service.getWSGestionarUsuarioPort();
         return port.validarUsuarioPorNombreUsuarioUCorreo(usuarioUCorreo, claveUsuario);
     }
 
-    private static java.util.List<com.portafolio.servicios.PersonaUsuario> listarInformacionCompletaTodosLosUsuarios() {
-        com.portafolio.servicios.WSGestionarUsuario_Service service = new com.portafolio.servicios.WSGestionarUsuario_Service();
-        com.portafolio.servicios.WSGestionarUsuario port = service.getWSGestionarUsuarioPort();
-        return port.listarInformacionCompletaTodosLosUsuarios();
+    private static int devolverNivelUsuario(java.lang.String correoUNombre) {
+        com.portafolio.service.WSGestionarUsuario_Service service = new com.portafolio.service.WSGestionarUsuario_Service();
+        com.portafolio.service.WSGestionarUsuario port = service.getWSGestionarUsuarioPort();
+        return port.devolverNivelUsuario(correoUNombre);
     }
 
-    private static int devolverNivelUsuario(java.lang.String correoUNombre) {
-        com.portafolio.servicios.WSGestionarUsuario_Service service = new com.portafolio.servicios.WSGestionarUsuario_Service();
-        com.portafolio.servicios.WSGestionarUsuario port = service.getWSGestionarUsuarioPort();
-        return port.devolverNivelUsuario(correoUNombre);
+    private static java.util.List<com.portafolio.service.PersonaUsuario> listarInformacionCompletaTodosLosUsuarios() {
+        com.portafolio.service.WSGestionarUsuario_Service service = new com.portafolio.service.WSGestionarUsuario_Service();
+        com.portafolio.service.WSGestionarUsuario port = service.getWSGestionarUsuarioPort();
+        return port.listarInformacionCompletaTodosLosUsuarios();
     }
 
 }

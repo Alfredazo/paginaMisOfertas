@@ -6,8 +6,9 @@
     <client name="WSGestionarUsuario">
       <wsdl-url>http://localhost:8080/WSPotafolio/WSGestionarUsuario?wsdl</wsdl-url>
       <local-wsdl-file>localhost_8080/WSPotafolio/WSGestionarUsuario.wsdl</local-wsdl-file>
-      <package-name forceReplace="true">com.portafolio.servicios</package-name>
+      <package-name>com.portafolio.service</package-name>
       <catalog-file>catalog.xml</catalog-file>
+      <use-dispatch>true</use-dispatch>
       <wsimport-options>
         <wsimport-option>
           <wsimport-option-name>extension</wsimport-option-name>
@@ -32,10 +33,6 @@
         <wsimport-option>
           <wsimport-option-name>xendorsed</wsimport-option-name>
           <wsimport-option-value>true</wsimport-option-value>
-        </wsimport-option>
-        <wsimport-option>
-          <wsimport-option-name>package</wsimport-option-name>
-          <wsimport-option-value>com.portafolio.servicios</wsimport-option-value>
         </wsimport-option>
       </wsimport-options>
     </client>
