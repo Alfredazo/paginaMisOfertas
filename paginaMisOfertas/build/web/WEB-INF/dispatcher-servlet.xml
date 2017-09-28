@@ -27,13 +27,13 @@
                 <prop key="encargado.htm">encargadoController</prop>
                 <prop key="gerente.htm">gerenteController</prop>
                 <prop key="cerrarSesion.htm">cerrarSesionController</prop>
-<<<<<<< HEAD
+
                 <prop key="registroUsuario.htm">registroUsuarioController</prop>
                 <prop key="mantenedorUsuario.htm">mantenedorUsuarioController</prop>
                 <prop key="mantenedorEmpresa.htm">mantenedorEmpresaController</prop>
-=======
+
                 <prop key="registrar.htm">registroUsuarioController</prop>
->>>>>>> 1f3e7668aefe2853daa899eaa5f9ba47e1b9670f
+
             </props>
         </property>
     </bean>

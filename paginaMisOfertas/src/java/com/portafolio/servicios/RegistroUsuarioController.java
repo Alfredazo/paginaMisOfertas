@@ -145,11 +145,9 @@ public class RegistroUsuarioController {
             mensajeFecha = "La fecha no debe venir en blanco";
         } else {
             /*Parsear la fecha*/
-            fechaDevuelta = fechaNacimiento;            
-            java.util.Date fechaParseada = Date.valueOf(fechaNacimiento);
-            java.sql.Date fechaLista = new java.sql.Date(fechaParseada.getTime());
-
+            fechaDevuelta = fechaNacimiento;
         }
+        System.out.println("Fecha: "+ fechaNacimiento);
 
         String direccion = request.getParameter("direccion");
         String mensajeDireccion = "";
@@ -168,18 +166,68 @@ public class RegistroUsuarioController {
         } else {
             telefonoDevuelta = String.valueOf(telefono);
         }
-
-        int idUsuarioPersona = retornarUltimoIDUsuario();
-
+        String erroresGenerales = "";
         if (error == false && errorPersona == false) {
             /*creo las cosas*/
             if (ingresarUsuario(nombreUsuario, clave, email, puntosAcumulados, nivelUsuario, urlImagen)) {
+                int idUsuarioPersona = retornarUltimoIDUsuario();
                 /*Ingresar Persona*/
-                
-                
-            }
+                if (ingresarPersona(rut, primerNombre, segundoNombre, primerApellido, segundoApellido, fechaNacimiento, direccion, telefono, idUsuarioPersona)) {
+                    return new ModelAndView("redirect:/home.htm");
+                } else {
+                    System.out.println("ERROR PERSONA");
+                    ModelAndView mavErrores = new ModelAndView();
+                    mavErrores.setViewName("home/registroUsuario");
+                    mavErrores.addObject("nombreError", mensajeNombre);
+                    mavErrores.addObject("emailError", mensajeEmail);
+                    mavErrores.addObject("claveError", mensajeClave);
+                    mavErrores.addObject("errorRut", mensajeRut);
+                    mavErrores.addObject("errorPrimerN", mensajePrimerN);
+                    mavErrores.addObject("errorSegundoN", mensajeSegundoN);
+                    mavErrores.addObject("errorPrimerA", mensajePrimerApellido);
+                    mavErrores.addObject("errorSegundoA", mensajeSegundoApellido);
+                    mavErrores.addObject("errorFechaN", mensajeFecha);
+                    mavErrores.addObject("errorDireccion", mensajeDireccion);
+                    mavErrores.addObject("errorTelefono", mensajeTelefono);
 
-            return new ModelAndView("redirect:/home.htm");
+                    mavErrores.addObject("nombreValue", nombreDevuelta);
+                    mavErrores.addObject("emailValue", mensajeDevuelta);
+                    mavErrores.addObject("rutValue", rutDevuelta);
+                    mavErrores.addObject("primerNValue", primerNDevuelta);
+                    mavErrores.addObject("segundoNValue", segundoNDevuelta);
+                    mavErrores.addObject("primerAValue", primerApellidoDevuelta);
+                    mavErrores.addObject("segundoAValue", segundoApellidoDevuelta);
+                    mavErrores.addObject("fechaValue", fechaDevuelta);
+                    mavErrores.addObject("direccionValue", direccionDevuelta);
+                    mavErrores.addObject("telefonoValue", telefonoDevuelta);
+                    return mavErrores;
+                }
+            }
+            System.out.println("ERROR Usuario");
+            ModelAndView mavErrores = new ModelAndView();
+            mavErrores.setViewName("home/registroUsuario");
+            mavErrores.addObject("nombreError", mensajeNombre);
+            mavErrores.addObject("emailError", mensajeEmail);
+            mavErrores.addObject("claveError", mensajeClave);
+            mavErrores.addObject("errorRut", mensajeRut);
+            mavErrores.addObject("errorPrimerN", mensajePrimerN);
+            mavErrores.addObject("errorSegundoN", mensajeSegundoN);
+            mavErrores.addObject("errorPrimerA", mensajePrimerApellido);
+            mavErrores.addObject("errorSegundoA", mensajeSegundoApellido);
+            mavErrores.addObject("errorFechaN", mensajeFecha);
+            mavErrores.addObject("errorDireccion", mensajeDireccion);
+            mavErrores.addObject("errorTelefono", mensajeTelefono);
+
+            mavErrores.addObject("nombreValue", nombreDevuelta);
+            mavErrores.addObject("emailValue", mensajeDevuelta);
+            mavErrores.addObject("rutValue", rutDevuelta);
+            mavErrores.addObject("primerNValue", primerNDevuelta);
+            mavErrores.addObject("segundoNValue", segundoNDevuelta);
+            mavErrores.addObject("primerAValue", primerApellidoDevuelta);
+            mavErrores.addObject("segundoAValue", segundoApellidoDevuelta);
+            mavErrores.addObject("fechaValue", fechaDevuelta);
+            mavErrores.addObject("direccionValue", direccionDevuelta);
+            mavErrores.addObject("telefonoValue", telefonoDevuelta);
 
         } else {
             ModelAndView mavErrores = new ModelAndView();
@@ -209,7 +257,7 @@ public class RegistroUsuarioController {
 
             return mavErrores;
         }
-
+        return null;
     }
 
     private static int retornarUltimoIDUsuario() {
@@ -259,4 +307,14 @@ public class RegistroUsuarioController {
         }
         return validacion;
     }
+
+    private static boolean ingresarPersona(java.lang.String rut, java.lang.String primerNombre, java.lang.String segundoNombre, java.lang.String primerApellido, java.lang.String segundoApellido, java.lang.String fechaNacimiento, java.lang.String direccion, int telefono, int idUsuario) {
+        com.portafolio.modelo.WSGestionarPersona_Service service = new com.portafolio.modelo.WSGestionarPersona_Service();
+        com.portafolio.modelo.WSGestionarPersona port = service.getWSGestionarPersonaPort();
+        return port.ingresarPersona(rut, primerNombre, segundoNombre, primerApellido, segundoApellido, fechaNacimiento, direccion, telefono, idUsuario);
+    }
+
+    
+  
+
 }

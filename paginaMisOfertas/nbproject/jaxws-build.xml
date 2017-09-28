@@ -42,5 +42,21 @@
         <delete dir="${build.generated.sources.dir}/jax-ws/com/portafolio/servicios"/>
         <delete dir="${build.generated.dir}/jax-wsCache/WSGestionarUsuario"/>
     </target>
-    <target name="wsimport-client-generate" depends="wsimport-client-WSGestionarUsuario"/>
+    <target name="wsimport-client-WSGestionarPersona" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/WSGestionarPersona"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/WSGestionarPersona" destdir="${build.generated.dir}/jax-wsCache/WSGestionarPersona" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/WSGestionarPersona/wsdl/localhost_8080/WSPotafolio/WSGestionarPersona.wsdl" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:8080/WSPotafolio/WSGestionarPersona?wsdl" xnocompile="true" xendorsed="true" package="com.portafolio.modelo">
+            <depends file="${basedir}/${conf-dir}xml-resources/web-service-references/WSGestionarPersona/wsdl/localhost_8080/WSPotafolio/WSGestionarPersona.wsdl"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/WSGestionarPersona"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/WSGestionarPersona">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-WSGestionarPersona" depends="-init-project">
+        <delete dir="${build.generated.sources.dir}/jax-ws/com/portafolio/modelo"/>
+        <delete dir="${build.generated.dir}/jax-wsCache/WSGestionarPersona"/>
+    </target>
+    <target name="wsimport-client-generate" depends="wsimport-client-WSGestionarUsuario, wsimport-client-WSGestionarPersona"/>
 </project>
