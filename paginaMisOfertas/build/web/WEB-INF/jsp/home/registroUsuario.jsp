@@ -24,47 +24,58 @@
 
         <div class="middle-box text-center loginscreen   animated fadeInDown">
             <div>
-
                 <h3>Registro en MisOfertas</h3>
                 <p>Creación de cuenta</p>
-                <form class="m-t" role="form" action="login.html">
+                <form class="m-t" role="form" method="post" >
                     <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Usuario" required="" name="nombreUsuario">
+                        <input type="text" class="form-control" placeholder="Usuario" required="" name="nombreUsuario" value="<c:out value="${nombreValue}"/>">
+                        <c:out value="${nombreError}"/>
+
                     </div>
                     <div class="form-group">
-                        <input type="email" class="form-control" placeholder="Email" required=""  name="email">
+                        <input type="email" class="form-control" placeholder="Email" required=""  name="email"  value="<c:out value="${emailValue}"/>" >
+                        <c:out value="${emailError}"/>
                     </div>
                     <div class="form-group">
                         <input type="password" class="form-control" placeholder="Contraseña" required=""  name="clave">
                     </div>
                     <div class="form-group">
                         <input type="password" class="form-control" placeholder="Repita Contraseña" required=""  name="repetirClave">
+                        <c:out value="${claveError}"/>
                     </div>
 
                     <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Rut" required=""  name="rut">
+                        <input type="text" class="form-control" placeholder="Rut" required=""  name="rut" value="<c:out value="${rutValue}"/>">
+                        <c:out value="${errorRut}"/>
                     </div>
                     <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Primer Nombre" required=""  name="primerNombre">
+                        <input type="text" class="form-control" placeholder="Primer Nombre" required=""  name="primerNombre" value="<c:out value="${primerNValue}"/>">
+                        <c:out value="${errorPrimerN}"/>
                     </div>
                     <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Segundo Nombre" required=""  name="segundoNombre">
+                        <input type="text" class="form-control" placeholder="Segundo Nombre" required=""  name="segundoNombre" value="<c:out value="${segundoNValue}"/>">
+                        <c:out value="${errorSegundoN}"/>
                     </div>
                     <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Primer Apellido" required=""  name="primerApellido">
+                        <input type="text" class="form-control" placeholder="Primer Apellido" required=""  name="primerApellido" value="<c:out value="${primerApellidoDevuelta}"/>">
+                        <c:out value="${errorPrimerA}"/>
                     </div>
                     <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Segundo Apellido" required="" name="segundoApellido">
+                        <input type="text" class="form-control" placeholder="Segundo Apellido" required="" name="segundoApellido" value="<c:out value="${segundoApellidoDevuelta}"/>">
+                        <c:out value="${errorSegundoA}"/>
                     </div>
                     <div class="form-group">
-                        <input type="date" class="form-control" placeholder="Fecha de nacimiento" required=""  name="fechaNacimiento">
+                        <input type="date" class="form-control" placeholder="Fecha de nacimiento" required=""  name="fechaNacimiento" value="<c:out value="${fechaValue}"/>">
                     </div>
                     <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Dirección" required=""  name="direccion">
+                        <input type="text" class="form-control" placeholder="Dirección" required=""  name="direccion" value="<c:out value="${direccionValue}"/>">
+                        <c:out value="${errorDireccion}"/>
                     </div>
                     <div class="form-group">
-                        <input type="number" class="form-control" placeholder="Telefono" required=""  name="telefono">
+                        <input type="number" class="form-control" placeholder="Telefono" required=""  name="telefono" value="<c:out value="${telefonoValue}"/>">
+                        <c:out value="${errorTelefono}"/>
                     </div>
+                    <!--
                     <div class="fileinput fileinput-new input-group" data-provides="fileinput">
                         <span class="input-group-addon btn btn-default btn-file">
                             <span class="fileinput-new">Subir imagen de perfil</span>
@@ -78,6 +89,7 @@
 
                         <a href="#" class="input-group-addon btn btn-default fileinput-exists" data-dismiss="fileinput">Remover</a>
                     </div>
+                    -->
                     <div class="form-group">
                         <div class="checkbox i-checks"><label> <input type="checkbox"><i></i> Acepta los terminos </label></div>
                     </div>
