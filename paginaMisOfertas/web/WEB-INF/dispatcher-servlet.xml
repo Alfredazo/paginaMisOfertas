@@ -28,6 +28,8 @@
                 <prop key="gerente.htm">gerenteController</prop>
                 <prop key="cerrarSesion.htm">cerrarSesionController</prop>
                 <prop key="registroUsuario.htm">registroUsuarioController</prop>
+                <prop key="mantenedorUsuario.htm">mantenedorUsuarioController</prop>
+                <prop key="mantenedorEmpresa.htm">mantenedorEmpresaController</prop>
             </props>
         </property>
     </bean>
@@ -68,10 +70,16 @@
                  class="com.portafolio.servicios.GerenteController"
     />
     
-     <bean id="cerrarSesionController"
+    <bean id="cerrarSesionController"
                  class="com.portafolio.servicios.CerrarSesionController"
     />
-     <bean id="registroUsuarioController"
+    <bean id="registroUsuarioController"
           class="com.portafolio.servicios.RegistroUsuarioController"
+    />
+    <bean id="mantenedorUsuarioController"
+          class="com.portafolio.servicios.MantenedorUsuarioController"
+    />
+    <bean id="mantenedorEmpresaController"
+          class="com.portafolio.servicios.MantenedorEmpresaController"
     />
 </beans>
