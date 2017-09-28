@@ -67,7 +67,7 @@ public class LoginController {
                     sesion.setAttribute("nombre", email);
                     sesion.setAttribute("nivelUsuarioSesion", nivelUsuario);
 
-                    return new ModelAndView("redirect:/administrador.htm");
+                    return new ModelAndView("redirect:/mantenedorUsuario.htm");
 
                 default:
                     ModelAndView mavHome = new ModelAndView("");

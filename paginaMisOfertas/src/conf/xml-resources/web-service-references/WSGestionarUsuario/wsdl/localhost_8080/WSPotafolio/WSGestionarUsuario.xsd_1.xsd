@@ -8,6 +8,10 @@
 
 <xs:element name="comprobarsiExisteEmailResponse" type="tns:comprobarsiExisteEmailResponse"/>
 
+<xs:element name="devolverIdUsuario" type="tns:devolverIdUsuario"/>
+
+<xs:element name="devolverIdUsuarioResponse" type="tns:devolverIdUsuarioResponse"/>
+
 <xs:element name="devolverNivelUsuario" type="tns:devolverNivelUsuario"/>
 
 <xs:element name="devolverNivelUsuarioResponse" type="tns:devolverNivelUsuarioResponse"/>
@@ -66,6 +70,19 @@
 </xs:sequence>
 </xs:complexType>
 
+<xs:complexType name="validarUsuarioPorNombreUsuarioUCorreo">
+<xs:sequence>
+<xs:element name="usuarioUCorreo" type="xs:string" minOccurs="0"/>
+<xs:element name="claveUsuario" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="validarUsuarioPorNombreUsuarioUCorreoResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+
 <xs:complexType name="listarInformacionCompletaDelUsuariosPorUsuarioClave">
 <xs:sequence>
 <xs:element name="nombreUsuario" type="xs:string" minOccurs="0"/>
@@ -96,14 +113,13 @@
 </xs:sequence>
 </xs:complexType>
 
-<xs:complexType name="validarUsuarioPorNombreUsuarioUCorreo">
+<xs:complexType name="comprobarNombreUsuario">
 <xs:sequence>
-<xs:element name="usuarioUCorreo" type="xs:string" minOccurs="0"/>
-<xs:element name="claveUsuario" type="xs:string" minOccurs="0"/>
+<xs:element name="nombreUsuario" type="xs:string" minOccurs="0"/>
 </xs:sequence>
 </xs:complexType>
 
-<xs:complexType name="validarUsuarioPorNombreUsuarioUCorreoResponse">
+<xs:complexType name="comprobarNombreUsuarioResponse">
 <xs:sequence>
 <xs:element name="return" type="xs:boolean"/>
 </xs:sequence>
@@ -121,18 +137,6 @@
 </xs:complexType>
 
 <xs:complexType name="modificarUsuarioResponse">
-<xs:sequence>
-<xs:element name="return" type="xs:boolean"/>
-</xs:sequence>
-</xs:complexType>
-
-<xs:complexType name="comprobarNombreUsuario">
-<xs:sequence>
-<xs:element name="nombreUsuario" type="xs:string" minOccurs="0"/>
-</xs:sequence>
-</xs:complexType>
-
-<xs:complexType name="comprobarNombreUsuarioResponse">
 <xs:sequence>
 <xs:element name="return" type="xs:boolean"/>
 </xs:sequence>
@@ -181,6 +185,18 @@
 <xs:complexType name="listarUsuariosPorNivelResponse">
 <xs:sequence>
 <xs:element name="return" type="tns:usuario" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="devolverIdUsuario">
+<xs:sequence>
+<xs:element name="correoUNombre" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="devolverIdUsuarioResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:int"/>
 </xs:sequence>
 </xs:complexType>
 
